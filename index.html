@@ -1,10 +1,92 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>My site</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Стоматологический кабинет</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f7f7;
+    }
+    header {
+      background-color: #0077cc;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #005fa3;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 14px 20px;
+      display: inline-block;
+    }
+    nav a:hover {
+      background-color: #004b82;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    footer {
+      background-color: #0077cc;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 <body>
-  <h1>Hi, this is my first site on GitHub Pages 🎉</h1>
+  <header>
+    <h1>Стоматологический кабинет «Улыбка»</h1>
+    <p>Здоровая улыбка — залог уверенности!</p>
+  </header>
+
+  <nav>
+    <a href="#about">О нас</a>
+    <a href="#services">Услуги</a>
+    <a href="#contact">Контакты</a>
+  </nav>
+
+  <div class="container">
+    <section id="about">
+      <h2>О нас</h2>
+      <p>Наш стоматологический кабинет работает с 2010 года. Мы предлагаем качественные и безопасные стоматологические услуги для всей семьи.</p>
+    </section>
+
+    <section id="services">
+      <h2>Услуги</h2>
+      <ul>
+        <li>Лечение кариеса</li>
+        <li>Профессиональная чистка зубов</li>
+        <li>Отбеливание</li>
+        <li>Протезирование</li>
+        <li>Имплантация</li>
+        <li>Ортодонтия</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Контакты</h2>
+      <p><strong>Адрес:</strong> г. Москва, ул. Зубная, д. 10</p>
+      <p><strong>Телефон:</strong> +7 (495) 123-45-67</p>
+      <p><strong>Время работы:</strong> Пн–Сб: 9:00–20:00</p>
+    </section>
+  </div>
+
+  <footer>
+    &copy; 2025 Стоматологический кабинет «Улыбка». Все права защищены.
+  </footer>
 </body>
 </html>
