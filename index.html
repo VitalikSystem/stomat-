@@ -3,28 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Стоматологічний кабінет</title>
+  <title>Стоматологічний кабінет «ДЕНТЕЯ»</title>
   <style>
     html, body {
       height: 100%;
       margin: 0;
-    }
-    body {
       font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
       background-color: #f7f7f7;
     }
+
     header {
       background: linear-gradient(135deg, #66a6ff, #89f7fe);
       color: white;
       padding: 20px;
       text-align: center;
     }
+    header img {
+      height: 80px;
+      vertical-align: middle;
+    }
+    header h1 {
+      display: inline-block;
+      margin-left: 15px;
+      font-size: 32px;
+      vertical-align: middle;
+    }
+
     nav {
       display: flex;
       justify-content: center;
       background-color: #005fa3;
+      flex-wrap: wrap;
     }
     nav a {
       color: white;
@@ -35,6 +44,7 @@
     nav a:hover {
       background-color: #004b82;
     }
+
     .container {
       max-width: 1000px;
       margin: 30px auto;
@@ -43,12 +53,14 @@
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       flex: 1;
     }
+
     footer {
       background-color: #0077cc;
       color: white;
       text-align: center;
       padding: 15px;
     }
+
     .social-icons {
       margin-top: 10px;
     }
@@ -62,18 +74,40 @@
       height: 32px;
       vertical-align: middle;
     }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+      nav a {
+        width: 100%;
+        text-align: center;
+      }
+      header h1 {
+        font-size: 20px;
+      }
+      .container {
+        margin: 10px;
+        padding: 15px;
+      }
+      header img {
+        height: 60px;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
+    <img src="Дентея.png" alt="Логотип Дентея">
     <h1>Стоматологічний кабінет «ДЕНТЕЯ»</h1>
     <p>Здорова усмішка — запорука впевненості!</p>
   </header>
 
   <nav>
-    <a href="#about">Про нас</a>
-    <a href="#services">Послуги</a>
-    <a href="#contact">Контакти</a>
+    <a href="index.html">Про нас</a>
+    <a href="services.html">Послуги</a>
+    <a href="contact.html">Контакти</a>
   </nav>
 
   <div class="container">
