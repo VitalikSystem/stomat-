@@ -8,6 +8,7 @@
     html, body {
       height: 100%;
       margin: 0;
+      scroll-behavior: smooth;
     }
     body {
       font-family: Arial, sans-serif;
@@ -25,14 +26,18 @@
       display: flex;
       justify-content: center;
       background-color: #005fa3;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
     nav a {
       color: white;
       text-decoration: none;
       padding: 14px 20px;
       display: inline-block;
+      transition: background-color 0.3s;
     }
-    nav a:hover {
+    nav a:hover, nav a.active {
       background-color: #004b82;
     }
     .container {
@@ -42,6 +47,10 @@
       background-color: white;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       flex: 1;
+    }
+    section {
+      padding: 40px 0;
+      border-bottom: 1px solid #ddd;
     }
     footer {
       background-color: #0077cc;
@@ -68,18 +77,16 @@
   </style>
 </head>
 <body>
-  <header>
-	  <nav>
-	<a href="#golovna">Головна</a>
-	<a href="#about">Про нас</a>
-    <a href="#services">Послуги</a>
-    <a href="#contact">Контакти</a>
-  </nav>
-<h1><strong><em>Стоматологічний кабінет «ДЕНТЕЯ»</em></strong></h1>
-<p>Здорова усмішка — запорука впевненості!</p>
+  <header id="golovna">
+    <nav>
+      <a href="#golovna">Головна</a>
+      <a href="#about">Про нас</a>
+      <a href="#services">Послуги</a>
+      <a href="#contact">Контакти</a>
+    </nav>
+    <h1><strong><em>Стоматологічний кабінет «ДЕНТЕЯ»</em></strong></h1>
+    <p>Здорова усмішка — запорука впевненості!</p>
   </header>
-
-  
 
   <div class="container">
     <section id="about">
@@ -98,23 +105,48 @@
         <li>🦷 дитячий прийом</li>
       </ul>
     </section>
+
+    <section id="contact">
+      <h2>Контакти</h2>
+      <p><strong>Адреса:</strong> м. Запоріжжя, вул. Іванова Андрія, 81-б</p>
+      <p><strong>Телефони:</strong> +38 (066) 963-43-57, +38 (097) 992-52-12</p>
+      <p><strong>Години роботи:</strong> Пн–Сб: 9:00–20:00</p>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/profile.php?id=61574048183508" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+        </a>
+        <a href="https://www.instagram.com/denteya.stomatology" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+        </a>
+      </div>
+    </section>
   </div>
 
   <footer>
     <div class="footer-contacts">
-      <p><strong>Адреса:</strong> м. Запоріжжя, вул. Іванова Андрія, 81-б</p>
-      <p><strong>Телефони:</strong> +38 (066) 963-43-57, +38 (097) 992-52-12</p>
-      <p><strong>Години роботи:</strong> Пн–Сб: 9:00–20:00</p>
+      <p>&copy; 2025 Стоматологічний кабінет «ДЕНТЕЯ». Всі права захищено.</p>
     </div>
-    <div class="social-icons">
-      <a href="https://www.facebook.com/profile.php?id=61574048183508" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
-      </a>
-      <a href="https://www.instagram.com/denteya.stomatology" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
-      </a>
-    </div>
-    <p>&copy; 2025 Стоматологічний кабінет «ДЕНТЕЯ». Всі права захищено.</p>
   </footer>
+
+  <script>
+    const links = document.querySelectorAll('nav a');
+
+    window.addEventListener('scroll', () => {
+      const fromTop = window.scrollY + 60;
+
+      links.forEach(link => {
+        const section = document.querySelector(link.getAttribute('href'));
+
+        if (
+          section.offsetTop <= fromTop &&
+          section.offsetTop + section.offsetHeight > fromTop
+        ) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
